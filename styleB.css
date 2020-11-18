@@ -1,0 +1,48 @@
+html, body {
+	font-family: Tahoma;
+	font-size: 40px;
+	white-space: nowrap;
+}
+
+.box {
+	display: flex;
+	flex-direction: row;
+}	
+
+.style1, .style2, .style3 {
+
+	/* Use content-box, padding and border are firstly excluded from an element's 
+	width and height calculation */
+	box-sizing: content-box;
+	background-color: #dfe1e7;
+
+	/* According to the spec, now the actual height is 130 + 2 * 10 = 150px, 
+	width is 80 + 2 * 10 = 100px, padding included, boarder excluded */
+	height: 130px;
+	width: 80px;
+	padding: 10px;
+
+	/* Set the min-width to be 80px so that the actual width will always be 100px. 
+	It won't shrink even when window resizes */
+	min-width: 80px;
+
+	/* Add a 10px dotted line to the left as the boarder */
+	border-left: 10px dotted #D0D0FF;
+}
+
+.style1, .style2 {
+	/* Set the space between the 5 boxes to be 10px */
+	margin-right: 10px;
+}
+
+.style3 {
+	position: fixed;
+	bottom: 0;
+	right: 0;
+}
+
+.style1:hover, .style2:hover, .style3:hover {
+	cursor: pointer;
+	background-color: yellow;
+	color: goldenrod;
+}
